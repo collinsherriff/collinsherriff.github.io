@@ -1,18 +1,132 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Collin Andrew Sherriff</title>
-    <script>
-      const words = ['world', 'universe', 'galaxy', 'planet', 'star'];
-      let index = 0;
-      setInterval(() => {
-        const heading = document.querySelector('h1');
-        heading.innerHTML = heading.innerHTML.replace(/\w+$/, words[index]);
-        index = (index + 1) % words.length;
-      }, 5000);
-    </script>
-  </head>
-  <body>
-    <h1>Hello there, beautiful <span id="last-word">world</span>!</h1>
-  </body>
-</html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Scollin Sherriff</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1E88E5;
+      color: #FFFFFF;
+      padding: 30px;
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #1E88E5;
+      color: #fff;
+    }
+
+    .about-me {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .about-me img {
+      width: 200px;
+      margin-right: 20px;
+    }
+
+    .about-me p {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .about-me {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-me img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>C Scollin Sherriff</h1>
+    <h2>Project Integration Manager</h2>
+  </header>
+
+  <section>
+    <h2>Contact Information</h2>
+    <table>
+      <tr>
+        <th>Phone</th>
+        <td>(+27) 73 369 3014</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>csherriff@alphawave.co.za</td>
+      </tr>
+      <tr>
+        <th>Experience</th>
+        <td>+3 Yr Start-Up Experience</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <table>
+      <tr>
+        <th>BSc International Business (Economics Major)</th>
+        <td>University of Stellenbosch</td>
+        <td>Magna Cum Laude, 2017 - 2020</td>
+      </tr>
+      <tr>
+        <th>Economics &amp; Finance Exchange</th>
+        <td>University of Bristol, UK</td>
+        <td>2019 - 2020</td>
+      </tr>
+      <tr>
+        <th>IGCSE / A Levels</th>
+        <td>University of Cambridge (IE)</td>
+        <td>2014 – 2016</td>
+      </tr>
+      <tr>
+        <th>National Senior Certificate (GCSE)</th>
+        <td>Parel Vallei Secondary
