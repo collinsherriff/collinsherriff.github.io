@@ -2,9 +2,17 @@
 <html>
   <head>
     <title>Collin Andrew Sherriff</title>
+    <script>
+      const words = ['world', 'universe', 'galaxy', 'planet', 'star'];
+      let index = 0;
+      setInterval(() => {
+        const heading = document.querySelector('h1');
+        heading.innerHTML = heading.innerHTML.replace(/\w+$/, words[index]);
+        index = (index + 1) % words.length;
+      }, 5000);
+    </script>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <p>Welcome to my personal website.</p>
+    <h1>Hello there, beautiful <span id="last-word">world</span>!</h1>
   </body>
 </html>
