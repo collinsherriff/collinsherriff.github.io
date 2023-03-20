@@ -489,3 +489,66 @@ document.addEventListener('mousemove', function(e){
   cursorBall.style.top = e.pageY + 'px';
 });
 </script>
+
+<p id="sentence"></p>
+
+<style>
+  #sentence {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid black;
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: 0 auto;
+  }
+  
+  #sentence.blink {
+    animation: blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes deleting {
+    from { width: 100% }
+    to { width: 0 }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+  }
+</style>
+
+<script>
+  const words = ['Designed', 'Created', 'Built', 'Made'];
+  let index = 0;
+  
+  function typeSentence() {
+    const sentenceElement = document.getElementById('sentence');
+    const word = words[index];
+    const duration = word.length * 100;
+    
+    sentenceElement.textContent = '';
+    sentenceElement.classList.remove('blink');
+    
+    setTimeout(() => {
+      sentenceElement.textContent = word;
+      sentenceElement.style.animation = `typing ${duration}ms steps(${word.length})`;
+      
+      setTimeout(() => {
+        sentenceElement.classList.add('blink');
+        sentenceElement.style.animation = `deleting ${duration}ms steps(${word.length})`;
+        
+        setTimeout(() => {
+          index = (index + 1) % words.length;
+          typeSentence();
+        }, duration);
+      }, duration + 500);
+    }, 1000);
+  }
+  
+  typeSentence();
+</script>
