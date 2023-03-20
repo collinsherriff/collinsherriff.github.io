@@ -467,3 +467,25 @@
 
 </section>
 
+<div id="cursor-ball"></div>
+
+<style>
+#cursor-ball {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: #5a5a5a; /* You can customize the color */
+  z-index: 9999;
+  pointer-events: none;
+  transition: all 0.1s ease-out;
+}
+</style>
+
+<script>
+document.addEventListener('mousemove', function(e){
+  var cursorBall = document.getElementById('cursor-ball');
+  cursorBall.style.left = e.pageX + 'px';
+  cursorBall.style.top = e.pageY + 'px';
+});
+</script>
